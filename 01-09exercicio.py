@@ -20,7 +20,14 @@ plt.show()
 medias_jose = [10,5,8,9,10,5,4]
 meses = ['feve','març','abril','maio','jun','jul','agos']
 plt.figure(figsize= (7,10))
-plt.bar(medias_jose,meses,)
+plt.bar(meses,medias_jose)
 
 
+plt.show()
+
+medias_jose = [10,5,8,9,10,5,4]
+meses = ['feve','març','abril','maio','jun','jul','agos']
+
+plt.figure(figsize = (6,6))
+plt.pie(medias_jose,labels = meses,autopct='%1.1f%%')
 plt.show()
