@@ -1,0 +1,98 @@
+<table class="table table-sm bg-light text-left">
+    <thead>
+      <tr>
+        <th scope="col">CURSOS</th>
+        <th scope="col">DATA DE INÍCIO</th>
+        <th scope="col">HORÁRIO</th>
+        <th scope="col">DIAS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">CCNA V7: Introduction to Networks</th>
+        <td>08/04/2025 a 10/05/2025</td>
+        <td>14:00 às 18:00 (ter/qui) | 09:00 às 18:00 (sáb)</td>
+        <td>Terça e quinta-feira | Sábados</td>
+      </tr>
+      <tr>
+        <th scope="row">Redes de Computadores - Redes Locais</th>
+        <td>28/04/2025</td>
+        <td>13:00 às 17:00</td>
+        <td>Segunda e quinta-feira</td>
+      </tr>
+      <tr>
+        <th scope="row">AZ-900</th>
+        <td>10/05/2025 a 28/07/2025</td>
+        <td>09:00 às 13:00 (sáb) | 13:00 às 17:00 (seg a qui)</td>
+        <td>Sábados | Segunda a quinta-feira</td>
+      </tr>
+      <tr>
+        <th scope="row">Nuvem - Microsoft AI-900</th>
+        <td>08/04/2025 a 28/05/2025</td>
+        <td>13:00 às 17:00 (seg a qui) | 07:30 às 11:30 (qua/qui)</td>
+        <td>Segunda a quinta-feira</td>
+      </tr>
+      <tr>
+        <th scope="row">Nuvem - Google Cloud Foundations</th>
+        <td>16/10/2025</td>
+        <td>19:00 às 22:00</td>
+        <td>Terça a sexta-feira</td>
+      </tr>
+      <tr>
+        <th scope="row">Python para Data Science</th>
+        <td>12/03/2025 | 02/04/2025 | 24/05/2025</td>
+        <td>14:00 às 18:00 | 19:00 às 22:00 | 09:00 às 18:00</td>
+        <td>Quarta a sexta-feira | Terça a sexta-feira | Sábados</td>
+      </tr>
+      <tr>
+        <th scope="row">Dashboards com Google Looker Studio</th>
+        <td>01/04/2025 | 12/05/2025 | 21/05/2025</td>
+        <td>14:00 às 18:00 | 08:00 às 12:00 | 19:00 às 22:00</td>
+        <td>Terça a quinta-feira | Segunda a quarta-feira | Segunda a sexta-feira</td>
+      </tr>
+      <tr>
+        <th scope="row">AWS Cloud Practitioner Foundational</th>
+        <td>13/05/2025</td>
+        <td>19:00 às 22:00</td>
+        <td>Terça a sexta-feira</td>
+      </tr>
+      <tr>
+        <th scope="row">Banco de Dados para Data Science</th>
+        <td>14/05/2025</td>
+        <td>19:00 às 22:00</td>
+        <td>Segunda a sexta-feira</td>
+      </tr>
+      <tr>
+        <th scope="row">Fundamentos do Python 1</th>
+        <td>24/04/2025</td>
+        <td>14:00 às 22:00</td>
+        <td>Quarta a sexta-feira</td>
+      </tr>
+<!-- 
+
+     <tr>
+        <th scope="row">Fundamentos em C++</th>
+        <td>24/04/2025</td>
+        <td>14:00 às 22:00</td>
+        <td>Quarta a sexta-feira</td>
+      </tr> -->
+
+<!--              <tr>
+        <th scope="row">Fundamentos em Java</th>
+        <td>24/04/2025</td>
+        <td>14:00 às 22:00</td>
+        <td>Quarta a sexta-feira</td>
+      </tr> --><tr>
+        <th scope="row">IoT</th>
+        <td>02/04/2025</td>
+        <td>07:30 às 11:30</td>
+        <td>Quarta e quinta-feira</td>
+      </tr>
+      <tr>
+        <th scope="row">Programação em Python</th>
+        <td>21/05/2025 a 26/06/2025</td>
+        <td>14:00 às 18:00 (qua a sex) | 19:00 às 22:00 (ter, qui, sex)</td>
+        <td>Quarta a sexta-feira | Terça, quinta e sexta-feira</td>
+      </tr>
+    </tbody>
+  </table>
