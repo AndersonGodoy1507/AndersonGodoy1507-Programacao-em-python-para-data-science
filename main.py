@@ -1,108 +1,98 @@
-import requests
-from bs4 import BeautifulSoup
+import sqlite3
 import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt 
+
+# esta criando o arquivo sql db -> database
+banco =  sqlite3.connect('dados.db')
+
+# para digitar sql no arquivo python
+# cursor do banco
+cursor =  banco.cursor()
+
+# cursor.execute(''' CREATE TABLE IF NOT EXISTS clientes(
+                 
+#                  id INTEGER PRIMARY  KEY AUTOINCREMENT,
+#                  nome TEXT NOT NULL,
+#                  email TEXT NOT NULL,
+#                  salario REAL NOT NULL,
+#                  cargo  TEXT NOT  NULL
+     
+# )''')
+
+# banco.commit()
+# # banco.close()
 
 
-# url = "https://bea3853.github.io/PROCESSO_DATA_SCIENCE/"
-url = "https://bea3853.github.io/site-ecommerce/"
-headers = {'User-Agent': 'Mozilla/5.0'}
-response = requests.get(url, headers=headers)
-soup = BeautifulSoup(response.text, 'html.parser')
+# # CREATE - CRIA A TABELA
+# # INSERT -  INSERIR DADOS NA TABELA
 
-nomes = []
-precos = []
-avaliacoes = []
+# cursor.execute('INSERT INTO clientes (nome,email,salario,cargo) VALUES(?, ?, ?, ?)', ('Ana','ana@gmail.com',4500.0,'Analista'))
+# banco.commit()              
+               
+# cursor.execute('INSERT INTO clientes (nome,email,salario,cargo) VALUES(?, ?, ?,?)', ('Kaio','kaka@gmail.com',3500.0,'Estagiário'))
+# banco.commit()    
 
+# cursor.execute('INSERT INTO clientes  (nome,email,salario,cargo) VALUES(?, ?, ?, ?)', ('Felipe','fe@gmail.com',1500.0,'Menor Ap.'))
+# banco.commit()      
 
-for produto in soup.find_all('div', class_='produto'):
-    nomes.append(produto.find('h2').text)
-    precos.append(float(produto.find('span', class_='preco').text.replace('R$', '').replace('.', '').replace(',', '.')))
-    avaliacoes.append(float(produto.find('span', class_='avaliacoes').text))
+# cursor.execute('INSERT INTO clientes  (nome,email,salario,cargo) VALUES(?, ?, ?, ?)', ('Bernardo','ber@gmail.com',9500.0,'Coordenador'))
+# banco.commit()    
 
+# cursor.execute('SELECT * FROM clientes')
+# DADOS_ = cursor.fetchall()
 
-df = pd.DataFrame({
-    'Modelo': nomes,
-    'Preco': precos,
-    'Avaliacao': avaliacoes
-})
+# df  =  pd.DataFrame(DADOS_)
+# df.to_csv('clientes.csv', index=False)
 
-
-print('DATA FRAME', df)
-
-# Salvando em CSV (opcional)
-df.to_csv('smartphones.csv', index=False)
-# df.to_html('index2.html')
-# df.to_excel('dados.xlsx')
-
-#### 2. Limpeza e Análise Exploratória (Pandas + NumPy)  
-
-# Carregar dados (se não vier do scraping)
-df = pd.read_csv('smartphones.csv')
-
-# Verificar dados faltantes
-df.isnull().sum()
-
-print('***  ' * 10)
-
-# Limpeza: Remover duplicatas e outliers
-df = df.drop_duplicates()
-
-precos_ =  df = df[df['Preco'] < 10000]
-
-print('*** ' * 10)
+# df = df.rename(columns={
+   
+#     0:'id',
+#     1:'nome',
+#     2:'email',
+#     3:'salario',
+#     4:'cargo'
+   
+#     })
 
 
-print(precos_)  # Filtrar preços absurdos
-
-# Extrair marca do modelo (ex.: "iPhone 15" -> "Apple")
-
-marca = df['Marca'] = df['Modelo'].str.split().str[0]
-print('MARCA DO MODELO', marca)
-
-print('*** ' * 10)
+# print(df)
 
 
-# Estatísticas básicas
-print('ESTATITICA:', df.describe())
+# # for n in DADOS_:
+# #     # print(n)
 
 
-print('*** ' * 10)
 
-# Preço médio por marca
-preco_medio = df.groupby('Marca')['Preco'].mean().sort_values(ascending=False)
-print('PRECO MÉDIO', preco_medio)
+# # SELECIONAR COLUNAS:
 
 
-# GRAFICOS 
+# cursor.execute('SELECT  nome, salario FROM clientes')
+# dados_  = cursor.fetchall()
 
-plt.figure(figsize=(10,6))
-plt.hist(df['Preco'], bins=20, color='blue', edgecolor = 'black')
-plt.title('DISTRIBIUÇÃO DOS PREÇOS DOS SMARTFONES')
-plt.ylabel('Preço R$')
-plt.xlabel('Quantidade')
-plt.grid(True)
-plt.show()
-
-plt.figure(figsize=(10,6))
-preco_medio.plot(kind = 'bar', color = 'orange')
-plt.title('PREÇO MÉDIO POR MARCA')
-plt.ylabel('Marca ')
-plt.xlabel('Preço')
-plt.grid(axis = 'y')
-plt.tick_params("x", rotation= 50 )
-plt.show()
+# # for n in dados_:
+# #     print(n)
 
 
-# relação de preço x avaliação
+# # print(DADOS_)
 
 
-plt.figure(figsize=(10,6))
-plt.scatter(df['Preco'], df['Avaliacao'],alpha=0.6, color = 'green')
-plt.title('RELAÇÃO DE PREÇO X AVALIAÇÃO')
-plt.ylabel('AVALIAÇÃO')
-plt.xlabel('Preço')
-plt.grid(axis = 'y')
-# plt.tick_params("x", rotation= 50 )
-plt.show()
+# cursor.execute('select * from clientes where salario > 8500.0')
+# salario_maior_1500 = cursor.fetchall()
+# print(salario_maior_1500)
+
+# cursor.execute('update clientes set salario = ? where id = ?',(5000.55,1))
+# banco.commit()
+# cursor.execute('select * from clientes')
+# alterar_sal = cursor.fetchall()
+# print(alterar_sal)
+
+
+# cursor.execute('delete from clientes where id = ?', (1,))
+# banco.commit()
+
+
+# cursor.execute('ALTER TABLE clientes DROP COLUMN cargo')
+# banco.commit()
+
+
+cursor.execute('ALTER TABLE clientes RENAME COLUMN salario to rendimentos')
+banco.commit()
