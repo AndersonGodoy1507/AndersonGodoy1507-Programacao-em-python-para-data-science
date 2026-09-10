@@ -60,7 +60,7 @@ print(previsao2)
 print('Exercicio 3')
 
 # EXERCICIO 4:Dados de quantidade de fertilizante vs produção
-fertilizante_kg = np.array([50, 100, 150, 200, 250])
+fertilizante_kg = np.array([50, 100, 150, 200, 250]) #eu inverti o reshap pra poder fazer a conta com o agrotoico
 producao_ton = np.array([2.0, 3.5, 4.8, 5.5, 6.0]).reshape(-1, 1)
 
 modelo3 = LinearRegression()
@@ -69,4 +69,4 @@ modelo3.fit(producao_ton,fertilizante_kg)
 ton = 20
 
 previsao3 = modelo3.predict([[ton]])[0]
-print(previsao3)
+print(round(previsao3,0))

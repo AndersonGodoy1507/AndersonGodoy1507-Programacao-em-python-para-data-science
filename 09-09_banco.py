@@ -26,7 +26,7 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS livros(
            titulo TEXT,
            autor TEXT,
            genero TEXT,
-           paginas INTEGER
+           paginas INTEGER,
            ano INTERGER
            )''')
 
